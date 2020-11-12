@@ -94,15 +94,16 @@ function playGame(playerInput){
 	let gameResult = displayResult(computerMove, playerMove);
 	console.log(gameResult);
 }
+
 let playRock = document.getElementById('play-rock');
 playRock.addEventListener('click', function(){
-	printMessage('Kamień został kliknięty');
+	playGame(1);
 });
 let playPaper = document.getElementById('play-paper');
 playPaper.addEventListener('click', function(){
-	printMessage('Papier został kliknięty');
+	playGame(2);
 });
 let playScissors = document.getElementById('play-scissors');
 playScissors.addEventListener('click', function(){
-	printMessage('Nożyczki zostały kliknięte');
+	playGame(3);
 });
