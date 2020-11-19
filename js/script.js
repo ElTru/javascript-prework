@@ -33,7 +33,7 @@
 		    printMessage('Ty wygrywasz!');
 			} else if( argComputerMove == stone && argPlayerMove == stone){
 			  printMessage('Remis');
-			} else if( argComputerMove == stone' && argPlayerMove == scissors){
+			} else if( argComputerMove == stone && argPlayerMove == scissors){
 			  printMessage('Przegrałeś');
 			} else if( argComputerMove == paper && argPlayerMove == scissors){
 			  printMessage('Ty wygrywasz!');
@@ -53,8 +53,6 @@
 		  }
 		}
 
-		console.log(displayResult);
-
 		const randomNumber = Math.floor(Math.random() * 3 + 1);
 
 		console.log('Wylosowana liczba to: ' + randomNumber);
@@ -68,6 +66,8 @@
 		const playerMove = getMoveName(playerInput);
 
 		printMessage('Twój ruch to: ' + playerMove);
+
+		displayResult(computerMove, playerMove);
 
 		const gameResult = displayResult;
 
