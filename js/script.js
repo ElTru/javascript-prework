@@ -8,45 +8,52 @@
 		function clearMessages(){
 			document.getElementById('messages').innerHTML = '';
 		}
+
 		clearMessages();
+
+		const stone = 'kamien';
+		const paper = 'papier';
+		const scissors = 'nożyce';
 
 		function getMoveName(argMoveId){
 		  if(argMoveId == 1){
-		    return 'kamień';
+		    return stone;
 		  } else if(argMoveId == 2){
-		    return 'papier';
+		    return paper;
 			} else if(argMoveId == 3){
-				return 'nożyce';
+				return scissors;
 			} else {
 		    printMessage('Nie znam ruchu o id ' + argMoveId + '.');
 		    return 'nieznany ruch';
 		  }
 		}
-		
-		function displayResult(argComputerMove, argPlayerMove){
-			if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+
+		const displayResult = function(argComputerMove, argPlayerMove){
+			if( argComputerMove == stone && argPlayerMove == paper){
 		    printMessage('Ty wygrywasz!');
-			} else if( argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
+			} else if( argComputerMove == stone && argPlayerMove == stone){
 			  printMessage('Remis');
-			} else if( argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
+			} else if( argComputerMove == stone' && argPlayerMove == scissors){
 			  printMessage('Przegrałeś');
-			} else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
+			} else if( argComputerMove == paper && argPlayerMove == scissors){
 			  printMessage('Ty wygrywasz!');
-			} else if( argComputerMove == 'papier' && argPlayerMove == 'papier'){
+			} else if( argComputerMove == paper && argPlayerMove == paper){
 			  printMessage('Remis');
-			} else if( argComputerMove == 'papier' && argPlayerMove == 'kamień'){
+			} else if( argComputerMove == paper && argPlayerMove == stone){
 			  printMessage('Przegrałeś');
-			} else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+			} else if( argComputerMove == scissors && argPlayerMove == stone){
 			  printMessage('Ty wygrywasz!');
-			} else if( argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
+			} else if( argComputerMove == scissors && argPlayerMove == scissors){
 			  printMessage('Remis');
-			} else if( argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
+			} else if( argComputerMove == scissors && argPlayerMove == paper){
 			  printMessage('Przegrałeś');
 			} else {
 		    printMessage('nieznany ruch');
 				return 'nieznany ruch';
 		  }
 		}
+
+		console.log(displayResult);
 
 		const randomNumber = Math.floor(Math.random() * 3 + 1);
 
@@ -62,7 +69,7 @@
 
 		printMessage('Twój ruch to: ' + playerMove);
 
-		const gameResult = displayResult(computerMove, playerMove);
+		const gameResult = displayResult;
 
 		console.log(gameResult);
 	}
